@@ -1,4 +1,25 @@
-home
-<br>
-<%= link_to 'Sign Up', new_user_registration_path unless current_user %><br>
+<% if current_user %>
+  <h2>Hey! This is a serious work in progress...</h2>
+  <h4>but go ahead and add some mantras with text or images and click 'Send now' from your profile.</h4>
+<% else %>
+  <h2>Welcome! Signup won't you...</h2>
+  <%= form_for(User.new, as: :user, url: registration_path(:user)) do |f| %>
 
+    <div>
+      <%= f.label :mobile_number %>
+      <%= f.text_field :mobile_number, autofocus: true, placeholder: '321-212-5555' %>
+    </div>
+
+    <div>
+      <%= f.label :password %> <% if @validatable %><i>(<%= @minimum_password_length %> characters minimum)</i><% end %>
+      <%= f.password_field :password, autocomplete: "off", placeholder: '******' %>
+    </div>
+
+    <div>
+      <%= f.label :carrier, 'Select Your Carrier' %>
+      <%= f.select :carrier, carrier_options %>
+    </div>
+
+    <div><%= f.submit 'Sign up', class: 'btn btn-primary' %></div>
+  <% end %>
+<% end %>
