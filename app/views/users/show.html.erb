@@ -20,7 +20,7 @@ show
   <% current_user.mantras.each do |m| %>
     <div>
       <%= m.title %><br>
-      <%= link_to 'View Image', m.image.url, target: '_blank' %><br>
+      <%= link_to 'View Image<br>'.html_safe, m.image.url, target: '_blank' if m.image.present? %>
       <%= link_to 'Send Now', send_now_path(id: m.id), method: :post %><br>
     </div>
   <% end %>
