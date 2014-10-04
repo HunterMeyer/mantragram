@@ -5,7 +5,7 @@ class MantrasController < ApplicationController
   end
 
   def create
-    @mantra = current_user.mantras.create(mantra_params)
+    @mantra = current_user.mantras.create(mantra_params.merge(status: 'Active'))
     if @mantra.save
       flash[:success] = 'Nicely done. Your mantra has been saved.'
       redirect_to current_user
