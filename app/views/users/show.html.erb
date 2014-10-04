@@ -1,11 +1,5 @@
-show
-
-<%= link_to 'Logout', destroy_user_session_path, method: :delete if current_user %>
-
-
-<br>
-<hr>
-<b>Create Mantra</b>
+<b>Create Mantra</b><br>
+Either title or image is required
 <%= form_for @user.mantras.new, html: { multipart: true } do |f| %>
   <%= f.label :title %>
   <%= f.text_field :title %><br>
@@ -15,13 +9,19 @@ show
 
 <br>
 <hr>
+<style>
+ a:hover { text-decoration: none; }
+ .erase  { color: #F04444; margin-right: 3px; }
+ .erase:hover { color: #CC2828;}
+ </style>
 
-<% if current_user.mantras.present? %>
-  <% current_user.mantras.each do |m| %>
+<% if current_user.mantras.active.present? %>
+  <% current_user.mantras.active.each do |m| %>
     <div>
       <%= m.title %><br>
       <%= link_to 'View Image<br>'.html_safe, m.image.url, target: '_blank' if m.image.present? %>
-      <%= link_to 'Send Now', send_now_path(id: m.id), method: :post %><br>
+      <%= link_to icon('fa fa-trash'), m, method: :delete, class: 'erase', data: { confirm: 'Delete job, you sure?' } %>
+      <%= link_to 'Send Now', send_now_path(id: m.id), method: :post %>
     </div>
   <% end %>
 <% end %>
