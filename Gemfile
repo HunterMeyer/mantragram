@@ -17,11 +17,9 @@ gem 'aws-sdk'
 gem 'daemons'
 gem 'mail'
 gem 'dkim'
-
-group :assets do
-  gem 'sass-rails', '4.0.2'
-  gem 'uglifier', '>= 1.0.3'
-end
+gem 'font-awesome-sass'
+gem 'sass-rails', '4.0.2'
+gem 'uglifier', '>= 1.0.3'
 
 group :production do
   gem 'rails_12factor'

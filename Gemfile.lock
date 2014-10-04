@@ -81,6 +81,8 @@ GEM
       factory_girl (~> 4.4.0)
       railties (>= 3.0.0)
     fastercsv (1.5.5)
+    font-awesome-sass (4.2.0)
+      sass (~> 3.2)
     haml (4.0.5)
       tilt
     heroku_rails_deflate (1.0.3)
@@ -223,6 +225,7 @@ DEPENDENCIES
   devise
   dkim
   factory_girl_rails
+  font-awesome-sass
   heroku_rails_deflate
   jbuilder
   jquery-rails
