@@ -10,7 +10,7 @@ class UserMailer < ActionMailer::Base
       from     'mantras@mantragram.herokuapp.com'
       to       recipient.smtp_address
       subject  mantra.title
-      body     '- Mantragram'
+      body     '/Mantragram'
       attachments[mantra.image_file_name] = image
     end
 
@@ -22,12 +22,11 @@ class UserMailer < ActionMailer::Base
       from    'mantras@mantragram.herokuapp.com'
       to      recipient.smtp_address
       subject mantra.title
-      body    '- Mantragram'
+      body    '/Mantragram'
     end
 
     mail.deliver!
   end
-
 
   def confirmation_instructions(recipient, token, opts={})
     # @token = token
@@ -42,19 +41,19 @@ class UserMailer < ActionMailer::Base
     mail.deliver!
   end
 
-  def reset_password_instructions(record, token, opts={})
-    recipient = record
-    reset_password_url = "http://jrdevjobs.com/employers/password/edit?reset_password_token=#{token}"
-    template = ERB.new(File.read('app/views/user_mailer/reset_password_instructions.text.erb')).result(binding)
+  # def reset_password_instructions(record, token, opts={})
+  #   recipient = record
+  #   reset_password_url = "http://jrdevjobs.com/employers/password/edit?reset_password_token=#{token}"
+  #   template = ERB.new(File.read('app/views/user_mailer/reset_password_instructions.text.erb')).result(binding)
 
-    mail = Mail.new do
-      from    'Jr.DevJobs Support <support@jrdevjobs.com>'
-      to      recipient.email
-      subject 'Jr.DevJobs Reset Password Instructions'
-      body    template
-    end
-    mail.deliver!
-  end
+  #   mail = Mail.new do
+  #     from    'Jr.DevJobs Support <support@jrdevjobs.com>'
+  #     to      recipient.email
+  #     subject 'Jr.DevJobs Reset Password Instructions'
+  #     body    template
+  #   end
+  #   mail.deliver!
+  # end
 
   def unlock_instructions(record, token, opts={})
     @token = token
