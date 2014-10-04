@@ -9,7 +9,7 @@ Mail.defaults do
   {
     :address => 'smtp.zoho.com',
     :port => 465,
-    :domain => 'jrdevjobs.com',
+    :domain => ENV['MANTRA_ZOHO_URL'],
     :user_name => ENV['MANTRA_ZOHO_UN'],
     :password => ENV['MANTRA_ZOHO_PW'],
     :authentication => 'login',
