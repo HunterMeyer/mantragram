@@ -11,7 +11,7 @@ class MantrasController < ApplicationController
       redirect_to current_user
     else
       flash[:warning] = 'Whoops, something is missing from your mantra.'
-      render 'new'
+      redirect_to current_user
     end
   end
 
@@ -26,14 +26,14 @@ class MantrasController < ApplicationController
       redirect_to current_user
     else
       flash[:warning] = 'Whoops, something is missing. Try again.'
-      render 'edit'
+      redirect_to current_user
     end
   end
 
   def remove_image
     @mantra = Mantra.find(params[:id])
     @mantra.update(image: nil)
-    redirect_to edit_mantra_path(@mantra)
+    redirect_to current_user
   end
 
   def destroy
@@ -44,10 +44,15 @@ class MantrasController < ApplicationController
     end
   end
 
+  def send_now
+    Mantra.find(params[:id]).deliver
+    redirect_to current_user
+  end
 
   private
 
   def mantra_params
     params.require(:mantra).permit(:user_id, :title, :description, :schedule, :image)
+  end
 
 end
