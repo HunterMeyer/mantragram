@@ -1,0 +1,11 @@
+development:
+  adapter: postgresql
+  database: mantragram_development
+
+test:
+  adapter: postgresql
+  database: mantragram_test
+
+production:
+  adapter: postgresql
+  database: mantragram_production
