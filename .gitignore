@@ -12,3 +12,6 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+
+# Ignore session secret token
+/config/initializers/secret_token.rb
