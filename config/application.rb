@@ -54,5 +54,9 @@ module Mantragram
     config.assets.version = '1.0'
 
     config.action_controller.permit_all_parameters = true
+
+    config.action_view.field_error_proc = Proc.new { |html_tag, instance|
+      html_tag
+    }
   end
 end
