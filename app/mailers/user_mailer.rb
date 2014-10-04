@@ -4,16 +4,30 @@ class UserMailer < ActionMailer::Base
   include Devise::Mailers::Helpers
   add_template_helper(ApplicationHelper)
 
-  def welcome_text(recipient)
+  def mantra_with_image(recipient, mantra)
+    image = open(mantra.image.url(:medium)).read
     mail = Mail.new do
-      from    'mantras@mantragram.herokuapp.com'
-      to      recipient.smtp_address
-      subject 'Welcome to Mantragram!'
-      body    'Out reply STOP'
+      from     'mantras@mantragram.herokuapp.com'
+      to       recipient.smtp_address
+      subject  mantra.title
+      body     '- Mantragram'
+      attachments[mantra.image_file_name] = image
     end
 
     mail.deliver!
   end
+
+  def mantra_with_text(recipient, mantra)
+    mail = Mail.new do
+      from    'mantras@mantragram.herokuapp.com'
+      to      recipient.smtp_address
+      subject mantra.title
+      body    '- Mantragram'
+    end
+
+    mail.deliver!
+  end
+
 
   def confirmation_instructions(recipient, token, opts={})
     # @token = token
@@ -21,8 +35,8 @@ class UserMailer < ActionMailer::Base
     mail = Mail.new do
       from    'mantras@mantragram.herokuapp.com'
       to      recipient.smtp_address
-      subject 'Confirm Mantragram Account'
-      body    'Reply 12345 to confirm. This doesnt work yet.'
+      subject 'Welcome to Mantragram'
+      body    'Reply 12345 to confirm account. This doesnt work yet.'
     end
 
     mail.deliver!
