@@ -1,3 +1,27 @@
 show
 
 <%= link_to 'Logout', destroy_user_session_path, method: :delete if current_user %>
+
+
+<br>
+<hr>
+<b>Create Mantra</b>
+<%= form_for @user.mantras.new, html: { multipart: true } do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %><br>
+  <%= f.file_field :image %><br><br>
+  <%= f.submit 'Submit' %>
+<% end %>
+
+<br>
+<hr>
+
+<% if current_user.mantras.present? %>
+  <% current_user.mantras.each do |m| %>
+    <div>
+      <%= m.title %><br>
+      <%= link_to 'View Image', m.image.url, target: '_blank' %><br>
+      <%= link_to 'Send Now', send_now_path(id: m.id), method: :post %><br>
+    </div>
+  <% end %>
+<% end %>
