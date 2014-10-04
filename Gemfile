@@ -15,6 +15,8 @@ gem 'delayed_job_web'
 gem 'paperclip'
 gem 'aws-sdk'
 gem 'daemons'
+gem 'mail'
+gem 'dkim'
 
 group :assets do
   gem 'sass-rails', '4.0.2'
