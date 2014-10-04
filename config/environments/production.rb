@@ -3,19 +3,22 @@ Mantragram::Application.configure do
 
   # Code is not reloaded between requests
   config.cache_classes = true
+  config.static_cache_control = "max-age=31557600"
 
   # Full error reports are disabled and caching is turned on
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true
+  config.eager_load = true
 
   # Disable Rails's static asset server (Apache or nginx will already do this)
-  config.serve_static_assets = false
+  config.serve_static_assets = true
 
   # Compress JavaScripts and CSS
   config.assets.compress = true
+  config.assets.js_compressor = :uglifier
 
   # Don't fallback to assets pipeline if a precompiled asset is missed
-  config.assets.compile = false
+  config.assets.compile = true
 
   # Generate digests for assets URLs
   config.assets.digest = true
@@ -64,4 +67,12 @@ Mantragram::Application.configure do
   # Log the query plan for queries taking more than this (works
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
+  config.paperclip_defaults = {
+    :storage => :s3,
+    :s3_credentials => {
+      :bucket => ENV['MANTRA_S3_BUCKET_NAME'],
+      :access_key_id => ENV['MANTRA_AWS_ACCESS_KEY_ID'],
+      :secret_access_key => ENV['MANTRA_AWS_SECRET_ACCESS_KEY']
+    }
+  }
 end

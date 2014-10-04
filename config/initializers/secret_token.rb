@@ -4,4 +4,4 @@
 # If you change this key, all old signed cookies will become invalid!
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
-Mantragram::Application.config.secret_token = 'd09ab6ba584995d1da11249875f310cc38b516b979e1279c29212714d25038d60c95bcb7112791712bc5fc22cde63e9e01c88c37e71a580f57511b5ac485b620'
+Mantragram::Application.config.secret_key_base = '2d35c66d8b375633a98ef81bed2ba7e516e03815648c7d2c62114a00d2a4e777816110f100b6b6f122ace94b03fe2a2ebd0dd45d4d8bbf6b6b01885f1cccd007'
