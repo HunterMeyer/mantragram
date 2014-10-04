@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
   before_validation :sanitize_mobile_number
   before_create :activate
   before_create :generate_reference
-  after_save :set_smtp_address
+  before_save :set_smtp_address
   validates :mobile_number, numericality: { only_integer: true }, presence: true, uniqueness: true, length: { is: 10 }
   validates :email, uniqueness: { case_sensitive: false }
   validates :smtp_address, uniqueness: { case_sensitive: false }
@@ -40,7 +40,7 @@ class User < ActiveRecord::Base
   end
 
   def set_smtp_address
-    self.smtp_address = self.mobile_number + domain_name(self.carrier) if self.carrier_changed?
+    self.smtp_address = (self.mobile_number + domain_name(self.carrier)) if self.carrier_changed?
   end
 
 end
