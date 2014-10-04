@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   include Carriers
-  devise :database_authenticatable, :registerable, :confirmable,
+  devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   has_many :mantras
   before_validation :sanitize_mobile_number
