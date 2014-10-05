@@ -1,17 +1,27 @@
-<%= nav_bar fixed: :top, brand: icon('fa fa-sun-o', 'Mantragram'), responsive: true do %>
-  <%= menu_group do %>
-    <%= menu_item 'Home', root_path %>
-  <% end %>
-  <%= menu_group :pull => :right do %>
-    <% if current_user %>
-      <%= menu_item icon('fa fa-user'), user_path(current_user) %>
-      <%= menu_item 'logout', destroy_user_session_path, method: :delete %>
-    <% else %>
-      <%= form_for User.new, :url => session_path(:user), :html => {:class=> 'navbar-form navbar-right'} do |f| -%>
-        <%= f.text_field :mobile_number, autofocus: true, placeholder: 'Mobile Number', class: 'span2' %>
-        <%= f.password_field :password, placeholder: 'Password', class: 'span2' %>
-        <%= f.submit 'Sign in', class: 'btn btn-default' %>
+<nav class='navbar navbar-default navbar-fixed-top' role='navigation'>
+  <div class='container'>
+    <div class='navbar-header'>
+      <button type='button' class='navbar-toggle collapsed' data-toggle='collapse' data-target='#header-menu'>
+        <span class='sr-only'>Toggle navigation</span>
+        <span class='icon-bar'></span>
+        <span class='icon-bar'></span>
+        <span class='icon-bar'></span>
+      </button>
+      <%= link_to icon('fa fa-sun-o', 'Mantragram'), root_path, class: 'navbar-brand' %>
+    </div>
+    <div class='collapse navbar-collapse' id='header-menu'>
+      <% if current_user %>
+        <ul class='nav navbar-nav pull-right'>
+          <li><%= link_to icon('fa fa-user'), user_path(current_user) %></li>
+          <li><%= link_to 'logout', destroy_user_session_path, method: :delete %></li>
+        </ul>
+      <% else %>
+        <%= form_for User.new, :url => session_path(:user), :html => {:class=> 'navbar-form navbar-right'} do |f| -%>
+          <%= f.text_field :mobile_number, autofocus: true, placeholder: 'Mobile Number', class: 'form-control' %>
+          <%= f.password_field :password, placeholder: 'Password', class: 'form-control' %>
+          <%= f.submit 'Sign in', class: 'btn btn-default' %>
+        <% end %>
       <% end %>
-    <% end %>
-  <% end %>
-<% end %>
+    </div>
+  </div>
+</nav>

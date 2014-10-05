@@ -1,25 +1,25 @@
-<% if current_user %>
-  <h2>Hey! This is a serious work in progress...</h2>
-  <h4>but go ahead and add some mantras with text or images and click 'Send now' from your profile.</h4>
-<% else %>
-  <h2>Welcome! Signup won't you...</h2>
-  <%= form_for(User.new, as: :user, url: registration_path(:user)) do |f| %>
+<div class='row'>
 
-    <div>
-      <%= f.label :mobile_number %>
-      <%= f.text_field :mobile_number, autofocus: true, placeholder: '321-212-5555' %>
-    </div>
+  <div class='col-md-6'>
+    <h2>Keep your mantra in focus</h2>
+    <p class='lead'>
+      Receive text messages with you mantra or a picture to remind you.
+    </p>
+  </div>
 
-    <div>
-      <%= f.label :password %> <% if @validatable %><i>(<%= @minimum_password_length %> characters minimum)</i><% end %>
-      <%= f.password_field :password, autocomplete: "off", placeholder: '******' %>
-    </div>
+  <div class='col-md-6'>
+    <h4>Sign up today</h4>
+    <%= form_for User.new, as: :user, url: registration_path(:user) do |f| %>
+      <div class='form-group'>
+        <%= f.label :mobile_number %>
+        <%= f.text_field :mobile_number, class: 'form-control col-md-12', autofocus: true, placeholder: '321-555-1234' %>
+      </div>
+      <div class='form-group'>
+        <%= f.label :password %>
+        <%= f.password_field :password, autocomplete: 'off', placeholder: '******', class: 'form-control' %>
+      </div>
+      <%= f.submit 'Sign up', class: 'btn btn-primary' %>
+    <% end %>
+  </div>
 
-    <div>
-      <%= f.label :carrier, 'Select Your Carrier' %>
-      <%= f.select :carrier, carrier_options %>
-    </div>
-
-    <div><%= f.submit 'Sign up', class: 'btn btn-primary' %></div>
-  <% end %>
-<% end %>
+</div>
