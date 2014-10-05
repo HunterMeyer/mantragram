@@ -12,7 +12,7 @@
     <h2>Sign up today</h2>
     <%= form_for User.new, as: :user, url: registration_path(:user) do |f| %>
       <div class='form-group'>
-        <%= f.label :mobile_number %>
+        <%= f.label :mobile_number, 'Mobile Number' %>
         <%= f.text_field :mobile_number, class: 'form-control', autofocus: true, placeholder: '321-555-1234' %>
       </div>
       <div class='form-group'>
