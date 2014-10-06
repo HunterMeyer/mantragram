@@ -23,7 +23,9 @@
         <%= f.label :carrier, 'Select your Carrier' %>
         <%= f.select :carrier, carrier_options, {}, { class: 'form-control' } %>
       </div>
-      <%= f.submit 'Sign up', class: 'btn btn-primary' %>
+      <%= button_tag type: :submit, class: 'btn btn-primary' do %>
+        <%= icon('fa fa-check', 'Sign up') %>
+      <% end %>
     <% end %>
   </div>
 

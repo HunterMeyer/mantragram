@@ -6,7 +6,7 @@ class Mantra < ActiveRecord::Base
   scope :active, -> { where(status: 'Active') }
 
   def deliver
-    self.image.present? ? UserMailer.mantra_with_image(self.user, self) : UserMailer.mantra_with_text(self.user, self)
+    UserMailer.mantra_message(self)
   end
 
 end

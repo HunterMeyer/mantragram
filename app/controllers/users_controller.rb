@@ -11,8 +11,11 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update(user_params)
-      flash[:success] = 'Awesome, your profile has been updated.'
-      redirect_to current_user
+      respond_to do |format|
+        format.html { flash[:success] = 'Awesome, your profile has been updated.'
+                      redirect_to current_user }
+        format.json { respond_with_bip @user }
+      end
     else
       flash[:warning] = 'Whoops, something went wrong. Try again.'
       render 'edit'
@@ -29,7 +32,7 @@ class UsersController < ApplicationController
 
   private
 
-  def users_params
+  def user_params
     params.require(:user).permit(:first_name, :last_name, :email, :carrier, :mobile_number)
   end
 

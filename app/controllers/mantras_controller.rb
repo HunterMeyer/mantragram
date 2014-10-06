@@ -22,8 +22,11 @@ class MantrasController < ApplicationController
   def update
     @mantra = Mantra.find(params[:id])
     if @mantra.update(mantra_params)
-      flash[:success] = 'Got it, your mantra has been updated.'
-      redirect_to current_user
+      respond_to do |format|
+        format.html { flash[:success] = 'Your mantra has been updated.'
+                      redirect_to current_user }
+        format.json { respond_with_bip @mantra }
+      end
     else
       flash[:warning] = 'Whoops, something is missing. Try again.'
       redirect_to current_user

@@ -4,27 +4,15 @@ class UserMailer < ActionMailer::Base
   include Devise::Mailers::Helpers
   add_template_helper(ApplicationHelper)
 
-  def mantra_with_image(recipient, mantra)
-    image = open(mantra.image.url(:medium)).read
+  def mantra_message(mantra)
+    image = open(mantra.image.url(:medium)).read if mantra.image.present?
     mail = Mail.new do
       from     'mantras@mantragram.herokuapp.com'
-      to       recipient.smtp_address
+      to       mantra.user.smtp_address
       subject  mantra.title
       body     '/Mantragram'
-      attachments[mantra.image_file_name] = image
     end
-
-    mail.deliver!
-  end
-
-  def mantra_with_text(recipient, mantra)
-    mail = Mail.new do
-      from    'mantras@mantragram.herokuapp.com'
-      to      recipient.smtp_address
-      subject mantra.title
-      body    '/Mantragram'
-    end
-
+    mail.attachments[mantra.image_file_name] = image if mantra.image.present?
     mail.deliver!
   end
 
