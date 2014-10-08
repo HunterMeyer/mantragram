@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
   before_create :activate
   before_create :generate_reference
   before_save :set_smtp_address
+  before_destroy :erase_mantras
   validates :mobile_number, numericality: { only_integer: true }, presence: true, uniqueness: true, length: { is: 10 }
   validates :email, uniqueness: { case_sensitive: false }, allow_nil: true, allow_blank: true
   validates :smtp_address, uniqueness: { case_sensitive: false }
@@ -41,6 +42,10 @@ class User < ActiveRecord::Base
 
   def set_smtp_address
     self.smtp_address = (self.mobile_number + domain_name(self.carrier)) if self.carrier_changed?
+  end
+
+  def erase_mantras
+    self.mantras.each { |m| m.destroy }
   end
 
 end
