@@ -39,19 +39,33 @@
   .best_in_place:hover { color: #424242; cursor: pointer; }
  </style>
 
+
 <div class='row'>
 
-  <div class='col-md-6'>
-    <% if current_user.mantras.active.present? %>
-      <% current_user.mantras.active.each do |m| %>
-        <div style='margin-bottom: 10px;'>
-          <%= best_in_place m, :title, nil: 'Add a Title' %><br>
-          <%= link_to 'View Image<br>'.html_safe, m.image.url, target: '_blank' if m.image.present? %>
-          <%= link_to icon('fa fa-trash'), m, method: :delete, class: 'erase', data: { confirm: 'Delete job, you sure?' } %>
-          <%= link_to 'Send Now', send_now_path(id: m.id), method: :post %>
-        </div>
-      <% end %>
-    <% end %>
-  </div>
+  <div class='col-md-12'>
+    <h4>My Mantras</h4>
+    <hr style='margin: 0 0 10px 0;'>
 
+    <div class='col-md-6'>
+      <% if current_user.mantras.active.present? %>
+        <% current_user.mantras.active.each do |m| %>
+          <div style='margin-bottom: 10px;'>
+            <%= link_to m.image.url, target: '_blank' do %>
+              <%= image_tag m.image.url, class: 'col-md-5 col-sm-5 col-xs-5' %>
+            <% end if m.image.present? %>
+            <div class='col-md-7 col-sm-7 col-xs-7'>
+              <div class='row'>
+                <%= best_in_place m, :title, nil: 'Add a Title', inner_class: 'col-md-12' %>
+              </div>
+              <div class='row' style='margin-top: 10px;'>
+                <%= link_to icon('fa fa-trash'), m, method: :delete, class: 'erase', data: { confirm: 'Delete job, you sure?' } %>
+                <%= link_to 'Send Now', send_now_path(id: m.id), method: :post %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+
+  </div>
 </div>
