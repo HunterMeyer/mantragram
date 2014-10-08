@@ -31,7 +31,7 @@ class UserMailer < ActionMailer::Base
 
   def reset_password_instructions(record, token, opts={})
     recipient = record
-    reset_password_url = "#{Rails.root}/users/password/edit?reset_password_token=#{token}"
+    reset_password_url = "http://mantragram.herokuapp.com/users/password/edit?reset_password_token=#{token}"
 
     mail = Mail.new do
       from    'mantras@mantragram.herokuapp.com'
