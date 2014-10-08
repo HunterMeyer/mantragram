@@ -5,7 +5,7 @@ class UserMailer < ActionMailer::Base
   add_template_helper(ApplicationHelper)
 
   def mantra_message(mantra)
-    image = open(mantra.image.url(:medium)).read if mantra.image.present?
+    image = open(mantra.image.url.read if mantra.image.present?
     mail = Mail.new do
       from     'mantras@mantragram.herokuapp.com'
       to       mantra.user.smtp_address
