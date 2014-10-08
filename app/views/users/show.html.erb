@@ -36,7 +36,7 @@
   .erase  { color: #F04444; margin-right: 3px; }
   .erase:hover { color: #CC2828; }
   .best_in_place { color: #525252; }
-  .best_in_place:hover { color: #424242; }
+  .best_in_place:hover { color: #424242; cursor: pointer; }
  </style>
 
 <div class='row'>
@@ -45,7 +45,7 @@
     <% if current_user.mantras.active.present? %>
       <% current_user.mantras.active.each do |m| %>
         <div style='margin-bottom: 10px;'>
-          <%= best_in_place m, :title, nil: 'Add a title' %><br>
+          <%= best_in_place m, :title, nil: 'Add a Title' %><br>
           <%= link_to 'View Image<br>'.html_safe, m.image.url, target: '_blank' if m.image.present? %>
           <%= link_to icon('fa fa-trash'), m, method: :delete, class: 'erase', data: { confirm: 'Delete job, you sure?' } %>
           <%= link_to 'Send Now', send_now_path(id: m.id), method: :post %>
