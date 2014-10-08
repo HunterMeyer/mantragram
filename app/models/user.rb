@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
   before_create :generate_reference
   before_save :set_smtp_address
   validates :mobile_number, numericality: { only_integer: true }, presence: true, uniqueness: true, length: { is: 10 }
-  validates :email, uniqueness: { case_sensitive: false }
+  validates :email, uniqueness: { case_sensitive: false }, allow_nil: true, allow_blank: true
   validates :smtp_address, uniqueness: { case_sensitive: false }
   validates :carrier, presence: true
 
