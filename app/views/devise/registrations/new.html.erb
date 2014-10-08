@@ -10,9 +10,9 @@
     <%= f.password_field :password, autocomplete: "off", placeholder: '******' %></div>
 
   <div><%= f.label :carrier, 'Select Your Carrier' %><br />
-    <%= f.select :carrier, carrier_options %></div>
+    <%= f.select :carrier, carrier_options %></div><br>
 
-  <div><%= f.submit "Sign up" %></div>
+  <div><%= f.submit "Sign up", class: 'btn btn-primary' %></div>
 <% end %>
-
+<br>
 <%= render "devise/shared/links" %>

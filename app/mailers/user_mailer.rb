@@ -29,19 +29,18 @@ class UserMailer < ActionMailer::Base
     mail.deliver!
   end
 
-  # def reset_password_instructions(record, token, opts={})
-  #   recipient = record
-  #   reset_password_url = "http://jrdevjobs.com/employers/password/edit?reset_password_token=#{token}"
-  #   template = ERB.new(File.read('app/views/user_mailer/reset_password_instructions.text.erb')).result(binding)
+  def reset_password_instructions(record, token, opts={})
+    recipient = record
+    reset_password_url = "#{Rails.root}/users/password/edit?reset_password_token=#{token}"
 
-  #   mail = Mail.new do
-  #     from    'Jr.DevJobs Support <support@jrdevjobs.com>'
-  #     to      recipient.email
-  #     subject 'Jr.DevJobs Reset Password Instructions'
-  #     body    template
-  #   end
-  #   mail.deliver!
-  # end
+    mail = Mail.new do
+      from    'mantras@mantragram.herokuapp.com'
+      to      recipient.smtp_address
+      subject 'Reset Password'
+      body    reset_password_url
+    end
+    mail.deliver!
+  end
 
   def unlock_instructions(record, token, opts={})
     @token = token
