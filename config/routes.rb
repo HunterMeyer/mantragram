@@ -1,7 +1,7 @@
 Mantragram::Application.routes.draw do
-  devise_for :users
-  resources :users
-  resources :mantras
+  devise_for :users, controllers: { registrations: :registrations}
+  resources  :users
+  resources  :mantras
 
   root 'static_pages#home'
 
