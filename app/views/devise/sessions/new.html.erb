@@ -1,17 +1,29 @@
-<h2>Log in</h2>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div><%= f.label :mobile_number %><br />
-  <%= f.text_field :mobile_number, autofocus: true, placeholder: '321-212-5555' %></div>
+<div class='col-lg-6 col-md-6 col-sm-12 col-xs-12 col-lg-offset-3 col-md-offset-3'>
+  <div class='row'>
+    <h2>Sign in</h2>
+    <div class='outer'>
+      <div class='inner'>
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+          <div class='form-group'>
+            <%= f.label :mobile_number, 'Mobile Number' %>
+            <%= f.text_field :mobile_number, autofocus: true, placeholder: '321-555-8675', class: 'form-control' %>
+          </div>
+          <div class='form-group'>
+            <%= f.label :password %>
+            <%= f.password_field :password, autocomplete: 'off', placeholder: '********', class: 'form-control' %>
+          </div>
+          <% if devise_mapping.rememberable? -%>
+            <div class='form-group'><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
+          <% end %>
 
-  <div><%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %></div>
-
-  <% if devise_mapping.rememberable? -%>
-    <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
-  <% end -%>
-
-  <div><%= f.submit "Log in", class: 'btn btn-primary' %></div>
-<% end %>
-<br>
-<%= render "devise/shared/links" %>
+          <%= button_tag type: :submit, class: 'btn btn-primary' do %>
+            <%= icon('fa fa-check', 'Sign in') %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+    <%= link_to 'Forgot your password?', new_user_password_path %><br>
+    <%= link_to 'Sign up', root_path %>
+  </div>
+</div>

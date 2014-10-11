@@ -1,2 +1,19 @@
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
+
+
+body { padding-top: 70px; background: #93C7D7; }
+a:hover { text-decoration: none; }
+.erase  { color: #F04444; margin-right: 3px; }
+.erase:hover { color: #CC2828; }
+.best_in_place { color: #525252; }
+.best_in_place:hover { color: #424242; cursor: pointer; }
+.outer { background: #D1E5EC; border-radius: 2px; box-shadow: 0 1px 1px rgba(0,0,0,0.15); margin-bottom: 10px; }
+.inner { padding: 10px; }
+.mantra-wrapper { padding-left: 0;}
+.mantra-image { border-radius: 2px; }
+#change-password { font-weight: normal; }
+#cancel-password { margin-left: 5px; }
+#change-password, #cancel-password { color: #525252; }
+#change-password:hover, #cancel-password:hover { cursor: pointer; color: #333; }
+#error_explanation h2 { color: #B34242; margin: 0 0 5px 0; font-size: 16px; }
