@@ -49,6 +49,7 @@ class MantrasController < ApplicationController
 
   def send_now
     Mantra.find(params[:id]).deliver
+    flash[:success] = 'Success. Your Mantra is on its way.'
     redirect_to current_user
   end
 
