@@ -14,4 +14,5 @@
 //= require jquery_ujs
 //= require best_in_place
 //= require bootstrap.min
+//= require jquery.minicolors
 //= require_tree .

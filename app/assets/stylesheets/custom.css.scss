@@ -1,19 +1,38 @@
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
 
-
-body { padding-top: 70px; background: #93C7D7; }
+/* Global */
+body { padding-top: 70px; background: #E8E8E8; }
 a:hover { text-decoration: none; }
-.erase  { color: #F04444; margin-right: 3px; }
-.erase:hover { color: #CC2828; }
-.best_in_place { color: #525252; }
-.best_in_place:hover { color: #424242; cursor: pointer; }
-.outer { background: #D1E5EC; border-radius: 2px; box-shadow: 0 1px 1px rgba(0,0,0,0.15); margin-bottom: 10px; }
+hr { border-top: 1px solid #DDD }
+
+/* Navbar */
+.navbar-default { background-image: none; background: #FFF; border: none; }
+
+/* Layouts */
+.outer {
+  background: #FFF;
+  border-radius: 2px;
+  box-shadow: 0 1px 1px rgba(0,0,0,0.15);
+  margin-bottom: 10px;
+}
 .inner { padding: 10px; }
+
+/* Forms */
+#error_explanation h2 { color: #B34242; margin: 0 0 5px 0; font-size: 16px; }
+
+/* User Show */
+.erase { color: #F04444; margin-right: 3px;
+  &:hover { color: #CC2828; }
+}
+.best_in_place { color: #525252;
+  &:hover { color: #424242; cursor: pointer; }
+}
 .mantra-wrapper { padding-left: 0;}
 .mantra-image { border-radius: 2px; }
-#change-password { font-weight: normal; }
-#cancel-password { margin-left: 5px; }
-#change-password, #cancel-password { color: #525252; }
-#change-password:hover, #cancel-password:hover { cursor: pointer; color: #333; }
-#error_explanation h2 { color: #B34242; margin: 0 0 5px 0; font-size: 16px; }
+.show-form { font-weight: normal; color: #525252; }
+.cancel-form { margin-left: 5px; color: #525252; }
+.show-form:hover, .cancel-form:hover { cursor: pointer; color: #333; }
+
+/* Styles Form */
+.minicolors-theme-default .minicolors-swatch { height: 12px; width: 12px; }
