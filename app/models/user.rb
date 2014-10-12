@@ -3,7 +3,9 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   has_many :mantras
+  has_one :style
   before_validation :sanitize_mobile_number
+  before_create :set_style
   before_create :activate
   before_create :generate_reference
   before_save :set_smtp_address
@@ -30,6 +32,10 @@ class User < ActiveRecord::Base
 
   def sanitize_mobile_number
     self.mobile_number = mobile_number.gsub(/[^0-9]/, '') if attribute_present?('mobile_number')
+  end
+
+  def set_style
+    Style.create(user_id: self.id)
   end
 
   def activate
