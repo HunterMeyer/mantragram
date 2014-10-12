@@ -1,14 +1,14 @@
 $(document).ready(function() {
-  $('.best_in_place').best_in_place();
 
-  $('#change-password').click(function() {
-    $('#edit-password-form').show();
+  $('.mini-color input[type=text]').minicolors();
+
+  $('.show-form').click(function() {
+    $(this).next('.row').toggleClass('hidden');
   });
 
-  $('#cancel-password').click(function() {
-    $('#edit-password-form').hide();
-  })
-
-
+  $('.cancel-form').click(function() {
+    debugger;
+    $(this).parent().parent().parent('.row').toggleClass('hidden');
+  });
 
 });
