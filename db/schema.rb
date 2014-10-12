@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141004065855) do
+ActiveRecord::Schema.define(version: 20141012203835) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +30,23 @@ ActiveRecord::Schema.define(version: 20141004065855) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+  end
+
+  create_table "styles", force: true do |t|
+    t.integer "user_id"
+    t.text    "background",          default: "#E8E8E8"
+    t.text    "heading",             default: "#333"
+    t.text    "card_background",     default: "#FFF"
+    t.text    "card_title",          default: "#525252"
+    t.text    "card_title_hover",    default: "#424242"
+    t.text    "send_mantra",         default: "#428bca"
+    t.text    "send_mantra_hover",   default: "#2A6496"
+    t.text    "delete_mantra",       default: "#F04444"
+    t.text    "delete_mantra_hover", default: "#CC2828"
+    t.text    "create_button",       default: "primary"
+    t.text    "bip",                 default: "#525252"
+    t.text    "bip_hover",           default: "#424242"
+    t.text    "navbar",              default: "#FFF"
   end
 
   create_table "users", force: true do |t|
