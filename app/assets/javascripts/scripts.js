@@ -10,4 +10,8 @@ $(document).ready(function() {
     $(this).parent().parent().parent('.row').toggleClass('hidden');
   });
 
+  $('.send-now').click(function() {
+    $(this).children('i').toggleClass('hidden');
+  });
+
 });

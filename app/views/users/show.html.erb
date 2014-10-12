@@ -56,7 +56,9 @@
             </div>
             <div style='margin-top: 5px;'>
               <%= link_to icon('fa fa-trash'), m, method: :delete, class: 'erase', data: { confirm: 'Delete job, you sure?' } %>
-              <%= link_to 'Send Now', send_now_path(id: m.id), class: 'send-now', method: :post %>
+              <%= link_to send_now_path(id: m.id), class: 'send-now', method: :post do %>
+                <i class='fa fa-spinner fa-spin hidden'></i> Send Now
+              <% end %>
             </div>
           </div>
         </div>
