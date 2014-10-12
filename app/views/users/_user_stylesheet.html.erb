@@ -1,0 +1,14 @@
+<%= content_for :head do %>
+  <style>
+    body { background: <%= current_user.style.background %>; }
+    h4 { color: <%= current_user.style.heading %>; }
+    .navbar-default { background: <%= current_user.style.navbar %>; }
+    .outer { background: <%= current_user.style.card_background %>; }
+    .best_in_place { color: <%= current_user.style.card_title %>; }
+    .best_in_place:hover { color: <%= current_user.style.card_title_hover%>; }
+    .send-now { color: <%= current_user.style.send_mantra %>; }
+    .send-now:hover { color: <%= current_user.style.send_mantra_hover %>; }
+    .erase { color: <%= current_user.style.delete_mantra %>; }
+    .erase:hover { color: <%= current_user.style.delete_mantra_hover %>; }
+  </style>
+<% end %>

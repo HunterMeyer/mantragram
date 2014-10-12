@@ -28,6 +28,11 @@ class User < ActiveRecord::Base
     end
   end
 
+  def reset_style
+    self.style.destroy
+    Style.create(user_id: self.id)
+  end
+
   private
 
   def sanitize_mobile_number

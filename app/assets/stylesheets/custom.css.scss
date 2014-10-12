@@ -18,16 +18,12 @@ hr { border-top: 1px solid #DDD }
 }
 .inner { padding: 10px; }
 
-/* Forms */
+/* Form Errors */
 #error_explanation h2 { color: #B34242; margin: 0 0 5px 0; font-size: 16px; }
 
 /* User Show */
-.erase { color: #F04444; margin-right: 3px;
-  &:hover { color: #CC2828; }
-}
-.best_in_place { color: #525252;
-  &:hover { color: #424242; cursor: pointer; }
-}
+.erase { color: #F04444; margin-right: 3px; &:hover { color: #CC2828; } }
+.best_in_place { color: #525252; &:hover { color: #424242; cursor: pointer; } }
 .mantra-wrapper { padding-left: 0;}
 .mantra-image { border-radius: 2px; }
 .show-form { font-weight: normal; color: #525252; }
@@ -38,3 +34,4 @@ hr { border-top: 1px solid #DDD }
 /* Styles Form */
 .minicolors-theme-default .minicolors-swatch { height: 12px; width: 12px; }
 .mini-color .form-group { margin-bottom: 5px; }
+.reset-style { margin-left: 5px; }

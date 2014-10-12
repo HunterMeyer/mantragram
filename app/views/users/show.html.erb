@@ -1,3 +1,5 @@
+<%= render 'user_stylesheet' %>
+
 <div class='row'>
   <div class='col-md-6 col-sm-6 col-xs-12'>
     <h4><%= @user.first_name.present? ? "Hi #{@user.first_name}" : 'My Profile' %></h4>
@@ -27,7 +29,7 @@
           <div class='form-group'>
             <%= f.file_field :image, class: 'form-control' %>
           </div>
-          <%= button_tag type: :submit, class: 'btn btn-primary' do %>
+          <%= button_tag type: :submit, class: "btn btn-#{current_user.style.create_button}" do %>
             <%= icon('fa fa-plus-circle', 'Create') %>
           <% end %>
         <% end %>
@@ -54,7 +56,7 @@
             </div>
             <div style='margin-top: 5px;'>
               <%= link_to icon('fa fa-trash'), m, method: :delete, class: 'erase', data: { confirm: 'Delete job, you sure?' } %>
-              <%= link_to 'Send Now', send_now_path(id: m.id), method: :post %>
+              <%= link_to 'Send Now', send_now_path(id: m.id), class: 'send-now', method: :post %>
             </div>
           </div>
         </div>

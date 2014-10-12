@@ -30,6 +30,11 @@ class UsersController < ApplicationController
     end
   end
 
+  def reset_style
+    current_user.reset_style
+    redirect_to user_path(current_user)
+  end
+
   private
 
   def user_params
