@@ -1,0 +1,70 @@
+<div class='row hidden'>
+  <div class='col-lg-6 col-md-6 col-sm-12 col-xs-12'>
+    <%= form_for @user.style, html: { class: 'form-horizontal mini-color' } do |f| %>
+      <div class='form-group'>
+        <%= f.label       :background, class: 'col-lg-8 col-md-8 col-sm-8 col-xs-8' %>
+        <div class='col-md-4 col-sm-4 col-xs-4'>
+          <%= f.text_field :background, class: 'form-control input-sm' %>
+        </div>
+      </div>
+      <div class='form-group'>
+        <%= f.label        :card_background, class: 'col-lg-8 col-md-8 col-sm-8 col-xs-8' %>
+        <div class='col-md-4 col-sm-4 col-xs-4'>
+          <%= f.text_field :card_background, class: 'form-control input-sm' %>
+        </div>
+      </div>
+      <div class='form-group'>
+        <%= f.label        :card_title, class: 'col-lg-8 col-md-8 col-sm-8 col-xs-8' %>
+        <div class='col-md-4 col-sm-4 col-xs-4'>
+          <%= f.text_field :card_title, class: 'form-control input-sm' %>
+        </div>
+      </div>
+      <div class='form-group'>
+        <%= f.label        :card_title_hover, class: 'col-lg-8 col-md-8 col-sm-8 col-xs-8' %>
+        <div class='col-md-4 col-sm-4 col-xs-4'>
+          <%= f.text_field :card_title_hover, class: 'form-control input-sm' %>
+        </div>
+      </div>
+      <div class='form-group'>
+        <%= f.label        :send_mantra, class: 'col-lg-8 col-md-8 col-sm-8 col-xs-8' %>
+        <div class='col-md-4 col-sm-4 col-xs-4'>
+          <%= f.text_field :send_mantra, class: 'form-control input-sm' %>
+        </div>
+      </div>
+      <div class='form-group'>
+        <%= f.label        :send_mantra_hover, class: 'col-lg-8 col-md-8 col-sm-8 col-xs-8' %>
+        <div class='col-md-4 col-sm-4 col-xs-4'>
+          <%= f.text_field :send_mantra_hover, class: 'form-control input-sm' %>
+        </div>
+      </div>
+      <div class='form-group'>
+        <%= f.label        :delete_mantra, class: 'col-lg-8 col-md-8 col-sm-8 col-xs-8' %>
+        <div class='col-md-4 col-sm-4 col-xs-4'>
+          <%= f.text_field :delete_mantra, class: 'form-control input-sm' %>
+        </div>
+      </div>
+      <div class='form-group'>
+        <%= f.label        :delete_mantra_hover, class: 'col-lg-8 col-md-8 col-sm-8 col-xs-8' %>
+        <div class='col-md-4 col-sm-4 col-xs-4'>
+          <%= f.text_field :delete_mantra_hover, class: 'form-control input-sm' %>
+        </div>
+      </div>
+      <div class='form-group'>
+        <%= f.label        :create_button, class: 'col-lg-8 col-md-8 col-sm-8 col-xs-8' %>
+        <div class='col-md-4 col-sm-4 col-xs-4'>
+          <%= f.select     :create_button, button_style_options, class: 'form-control input-sm' %>
+        </div>
+      </div>
+      <div class='form-group'>
+        <%= f.label        :navbar, class: 'col-lg-8 col-md-8 col-sm-8 col-xs-8' %>
+        <div class='col-md-4 col-sm-4 col-xs-4'>
+          <%= f.text_field :navbar, class: 'form-control input-sm' %>
+        </div>
+      </div>
+      <%= button_tag type: :submit, class: 'btn btn-default btn-sm' do %>
+        <%= icon('fa fa-check', 'Save') %>
+      <% end %>
+      <span class='cancel-form'>Cancel</span>
+    <% end %>
+  </div>
+</div>
