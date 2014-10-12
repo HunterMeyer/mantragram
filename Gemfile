@@ -21,7 +21,7 @@ gem 'best_in_place', github: 'bernat/best_in_place', ref: '11805c95f7cdc32c69db8
 gem 'font-awesome-sass'
 gem 'sass-rails', '4.0.2'
 gem 'uglifier', '>= 1.0.3'
-gem 'FoneFinder'
+gem 'jquery-minicolors-rails'
 
 group :production do
   gem 'rails_12factor'
