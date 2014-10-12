@@ -7,4 +7,16 @@ module UsersHelper
     ].concat(carrier_names)
   end
 
+  def button_style_options
+    [
+      ['Blue', 'primary'],
+      ['Green', 'success'],
+      ['Orange', 'warning'],
+      ['Red', 'danger'],
+      ['Teal', 'info'],
+      ['White', 'default'],
+      ['None', 'link']
+    ]
+  end
+
 end
