@@ -31,8 +31,10 @@ hr { border-top: 1px solid #DDD }
 .mantra-wrapper { padding-left: 0;}
 .mantra-image { border-radius: 2px; }
 .show-form { font-weight: normal; color: #525252; }
+.show-form ~ .row { margin-left: 5px; }
 .cancel-form { margin-left: 5px; color: #525252; }
 .show-form:hover, .cancel-form:hover { cursor: pointer; color: #333; }
 
 /* Styles Form */
 .minicolors-theme-default .minicolors-swatch { height: 12px; width: 12px; }
+.mini-color .form-group { margin-bottom: 5px; }

@@ -7,9 +7,9 @@
         <h5 class='muted'><%= best_in_place @user, :first_name, nil: "What's your first name?" %></h5>
         <h5 class='muted'><%= best_in_place @user, :last_name, nil: "What's your last name?" %></h5>
         <h5 class='muted'><%= best_in_place @user, :email, nil: "What's your email?" %></h5>
-        <h5 class='muted show-form'>Change password</h5>
+        <h5 class='muted show-form'><i class='fa fa-key'></i> Change password</h5>
         <%= render 'edit_password_form' %>
-        <h5 class='muted show-form'>Change style</h5>
+        <h5 class='muted show-form'><i class='fa fa-paint-brush fa-flip-horizontal'></i> Change style</h5>
         <%= render 'edit_style_form' %>
       </div>
     </div>

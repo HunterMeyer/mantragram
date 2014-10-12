@@ -7,7 +7,6 @@ $(document).ready(function() {
   });
 
   $('.cancel-form').click(function() {
-    debugger;
     $(this).parent().parent().parent('.row').toggleClass('hidden');
   });
 
