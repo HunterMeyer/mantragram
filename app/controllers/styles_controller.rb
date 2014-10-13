@@ -17,7 +17,7 @@ class StylesController < ApplicationController
   private
 
   def style_params
-    params.require(:style).permit(:background, :card_title, :card_title_hover, :card_background,
+    params.require(:style).permit(:background, :card_title, :card_title_hover, :card_background, :heading,
       :send_mantra, :send_mantra_hover, :delete_mantra, :delete_mantra_hover, :create_button, :navbar)
   end
 

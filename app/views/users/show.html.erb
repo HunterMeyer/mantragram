@@ -29,7 +29,7 @@
           <div class='form-group'>
             <%= f.file_field :image, class: 'form-control' %>
           </div>
-          <%= button_tag type: :submit, class: "btn btn-#{current_user.style.create_button}" do %>
+          <%= button_tag type: :submit, id: 'create-mantra', class: "btn btn-#{current_user.style.create_button}" do %>
             <%= icon('fa fa-plus-circle', 'Create') %>
           <% end %>
         <% end %>
