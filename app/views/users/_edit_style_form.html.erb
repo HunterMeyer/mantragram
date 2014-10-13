@@ -1,69 +1,99 @@
 <div class='row hidden'>
-  <div class='col-lg-6 col-md-6 col-sm-12 col-xs-12'>
+  <div class='col-lg-8 col-md-11 col-sm-12 col-xs-7'>
     <%= form_for @user.style, html: { class: 'form-horizontal mini-color' } do |f| %>
       <div class='form-group'>
-        <%= f.label        :navbar, class: 'col-lg-8 col-md-8 col-sm-8 col-xs-8' %>
-        <div class='col-md-4 col-sm-4 col-xs-4'>
-          <%= f.text_field :navbar, class: 'form-control input-sm' %>
+        <%= f.label        :navbar, class: 'col-lg-7 col-md-7 col-sm-7 col-xs-7' %>
+        <div class='col-lg-4 col-md-4 col-sm-4 col-xs-4'>
+          <%= f.text_field :navbar, class: 'form-control input-sm', data: { original: @user.style.navbar } %>
+        </div>
+        <div class='reset-input col-lg-1 col-md-1 col-sm-1 col-xs-1'>
+          <span class='hidden'>Reset</span>
         </div>
       </div>
       <div class='form-group'>
-        <%= f.label        :background, class: 'col-lg-8 col-md-8 col-sm-8 col-xs-8' %>
+        <%= f.label        :background, class: 'col-lg-7 col-md-7 col-sm-7 col-xs-7' %>
         <div class='col-md-4 col-sm-4 col-xs-4'>
-          <%= f.text_field :background, class: 'form-control input-sm' %>
+          <%= f.text_field :background, class: 'form-control input-sm', data: { original: @user.style.background } %>
+        </div>
+        <div class='reset-input col-lg-1 col-md-1 col-sm-1 col-xs-1'>
+          <span class='hidden'>Reset</span>
         </div>
       </div>
       <div class='form-group'>
-        <%= f.label        :heading, 'Section heading', class: 'col-lg-8 col-md-8 col-sm-8 col-xs-8' %>
-        <div class='col-md-4 col-sm-4 col-xs-4'>
-          <%= f.text_field :heading, class: 'form-control input-sm' %>
+        <%= f.label        :heading, 'Section heading', class: 'col-lg-7 col-md-7 col-sm-7 col-xs-7' %>
+        <div class='col-lg-4 col-md-4 col-sm-4 col-xs-4'>
+          <%= f.text_field :heading, class: 'form-control input-sm', data: { original: @user.style.heading } %>
+        </div>
+        <div class='reset-input col-lg-1 col-md-1 col-sm-1 col-xs-1'>
+          <span class='hidden'>Reset</span>
         </div>
       </div>
       <div class='form-group'>
-        <%= f.label        :card_background, 'Card background', class: 'col-lg-8 col-md-8 col-sm-8 col-xs-8' %>
-        <div class='col-md-4 col-sm-4 col-xs-4'>
-          <%= f.text_field :card_background, class: 'form-control input-sm' %>
+        <%= f.label        :card_background, 'Card background', class: 'col-lg-7 col-md-7 col-sm-7 col-xs-7' %>
+        <div class='col-lg-4 col-md-4 col-sm-4 col-xs-4'>
+          <%= f.text_field :card_background, class: 'form-control input-sm', data: { original: @user.style.card_background } %>
+        </div>
+        <div class='reset-input col-lg-1 col-md-1 col-sm-1 col-xs-1'>
+          <span class='hidden'>Reset</span>
         </div>
       </div>
       <div class='form-group'>
-        <%= f.label        :card_title, 'Mantra title', class: 'col-lg-8 col-md-8 col-sm-8 col-xs-8' %>
-        <div class='col-md-4 col-sm-4 col-xs-4'>
-          <%= f.text_field :card_title, class: 'form-control input-sm' %>
+        <%= f.label        :card_title, 'Mantra title', class: 'col-lg-7 col-md-7 col-sm-7 col-xs-7' %>
+        <div class='col-lg-4 col-md-4 col-sm-4 col-xs-4'>
+          <%= f.text_field :card_title, class: 'form-control input-sm', data: { original: @user.style.card_title } %>
+        </div>
+        <div class='reset-input col-lg-1 col-md-1 col-sm-1 col-xs-1'>
+          <span class='hidden'>Reset</span>
         </div>
       </div>
       <div class='form-group'>
-        <%= f.label        :card_title_hover, 'Mantra title hover', class: 'col-lg-8 col-md-8 col-sm-8 col-xs-8' %>
-        <div class='col-md-4 col-sm-4 col-xs-4'>
-          <%= f.text_field :card_title_hover, class: 'form-control input-sm' %>
+        <%= f.label        :card_title_hover, 'Mantra title hover', class: 'col-lg-7 col-md-7 col-sm-7 col-xs-7' %>
+        <div class='col-lg-4 col-md-4 col-sm-4 col-xs-4'>
+          <%= f.text_field :card_title_hover, class: 'form-control input-sm', data: { original: @user.style.card_title_hover } %>
+        </div>
+        <div class='reset-input col-lg-1 col-md-1 col-sm-1 col-xs-1'>
+          <span class='hidden'>Reset</span>
         </div>
       </div>
       <div class='form-group'>
-        <%= f.label        :send_mantra, class: 'col-lg-8 col-md-8 col-sm-8 col-xs-8' %>
-        <div class='col-md-4 col-sm-4 col-xs-4'>
-          <%= f.text_field :send_mantra, class: 'form-control input-sm' %>
+        <%= f.label        :send_mantra, class: 'col-lg-7 col-md-7 col-sm-7 col-xs-7' %>
+        <div class='col-lg-4 col-md-4 col-sm-4 col-xs-4'>
+          <%= f.text_field :send_mantra, class: 'form-control input-sm', data: { original: @user.style.send_mantra } %>
+        </div>
+        <div class='reset-input col-lg-1 col-md-1 col-sm-1 col-xs-1'>
+          <span class='hidden'>Reset</span>
         </div>
       </div>
       <div class='form-group'>
-        <%= f.label        :send_mantra_hover, class: 'col-lg-8 col-md-8 col-sm-8 col-xs-8' %>
-        <div class='col-md-4 col-sm-4 col-xs-4'>
-          <%= f.text_field :send_mantra_hover, class: 'form-control input-sm' %>
+        <%= f.label        :send_mantra_hover, class: 'col-lg-7 col-md-7 col-sm-7 col-xs-7' %>
+        <div class='col-lg-4 col-md-4 col-sm-4 col-xs-4'>
+          <%= f.text_field :send_mantra_hover, class: 'form-control input-sm', data: { original: @user.style.send_mantra_hover } %>
+        </div>
+        <div class='reset-input col-lg-1 col-md-1 col-sm-1 col-xs-1'>
+          <span class='hidden'>Reset</span>
         </div>
       </div>
       <div class='form-group'>
-        <%= f.label        :delete_mantra, class: 'col-lg-8 col-md-8 col-sm-8 col-xs-8' %>
-        <div class='col-md-4 col-sm-4 col-xs-4'>
-          <%= f.text_field :delete_mantra, class: 'form-control input-sm' %>
+        <%= f.label        :delete_mantra, class: 'col-lg-7 col-md-7 col-sm-7 col-xs-7' %>
+        <div class='col-lg-4 col-md-4 col-sm-4 col-xs-4'>
+          <%= f.text_field :delete_mantra, class: 'form-control input-sm', data: { original: @user.style.delete_mantra } %>
+        </div>
+        <div class='reset-input col-lg-1 col-md-1 col-sm-1 col-xs-1'>
+          <span class='hidden'>Reset</span>
         </div>
       </div>
       <div class='form-group'>
-        <%= f.label        :delete_mantra_hover, class: 'col-lg-8 col-md-8 col-sm-8 col-xs-8' %>
-        <div class='col-md-4 col-sm-4 col-xs-4'>
-          <%= f.text_field :delete_mantra_hover, class: 'form-control input-sm' %>
+        <%= f.label        :delete_mantra_hover, class: 'col-lg-7 col-md-7 col-sm-7 col-xs-7' %>
+        <div class='col-lg-4 col-md-4 col-sm-4 col-xs-4'>
+          <%= f.text_field :delete_mantra_hover, class: 'form-control input-sm', data: { original: @user.style.delete_mantra_hover } %>
+        </div>
+        <div class='reset-input col-lg-1 col-md-1 col-sm-1 col-xs-1'>
+          <span class='hidden'>Reset</span>
         </div>
       </div>
       <div class='form-group'>
-        <%= f.label        :create_button, class: 'col-lg-8 col-md-8 col-sm-8 col-xs-8' %>
-        <div class='col-md-4 col-sm-4 col-xs-4'>
+        <%= f.label        :create_button, class: 'col-lg-7 col-md-7 col-sm-7 col-xs-7' %>
+        <div class='col-lg-4 col-md-4 col-sm-4 col-xs-4'>
           <%= f.select     :create_button, button_style_options, class: 'form-control input-sm' %>
         </div>
       </div>
@@ -71,7 +101,7 @@
         <%= icon('fa fa-check', 'Save') %>
       <% end %>
       <span class='cancel-form'>Cancel</span>
-      <span class='reset-style'><%= link_to 'Reset', reset_style_path, method: :post %></span>
+      <span class='reset-style'><%= link_to 'Reset All', reset_style_path, method: :post %></span>
     <% end %>
   </div>
 </div>
