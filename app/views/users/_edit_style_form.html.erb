@@ -101,7 +101,9 @@
         <%= icon('fa fa-check', 'Save') %>
       <% end %>
       <span class='cancel-form'>Cancel</span>
-      <span class='reset-style'><%= link_to 'Reset All', reset_style_path, method: :post %></span>
+      <span class='reset-style'>
+        <%= link_to 'Default', reset_style_path, method: :post, confirm: 'This will erase all your styles. You sure?' %>
+      </span>
     <% end %>
   </div>
 </div>
