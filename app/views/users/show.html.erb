@@ -55,7 +55,7 @@
               <%= best_in_place m, :title, nil: 'Add a Title', inner_class: 'col-md-12' %>
             </div>
             <div style='margin-top: 5px;'>
-              <%= link_to icon('fa fa-trash'), m, method: :delete, class: 'erase', data: { confirm: 'Delete job, you sure?' } %>
+              <%= link_to icon('fa fa-trash'), m, method: :delete, class: 'erase', data: { confirm: 'Delete Mantra, you sure?' } %>
               <%= link_to send_now_path(id: m.id), class: 'send-now', method: :post do %>
                 <i class='fa fa-spinner fa-spin hidden'></i> Send Now
               <% end %>
